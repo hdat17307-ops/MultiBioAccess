@@ -1,0 +1,10 @@
+/.claude
+/.dockerignore
+/CLAUDE.md
+/Dockerfile
+/docker-compose.mac.yml
+/docker-compose.win.yml
+/docker-compose.yml
+/prompt.txt
+/run.bat
+/run.sh

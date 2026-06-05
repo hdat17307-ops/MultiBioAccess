@@ -1,0 +1,18 @@
+{
+  "employees": [
+    {
+      "id": "EMP-001",
+      "name": "your name",
+      "department": "Engineering",
+      "face_image": "data/faces/emp001.jpeg",
+      "card_id": "your id"
+    },
+    {
+      "id": "EMP-002",
+      "name": "your name",
+      "department": "HR",
+      "face_image": "data/faces/emp002.jpeg",
+      "card_id": "your id"
+    }
+  ]
+}
