@@ -2,17 +2,38 @@
   "employees": [
     {
       "id": "EMP-001",
-      "name": "your name",
+      "name": "CHAU HIEN DAT",
       "department": "Engineering",
       "face_image": "data/faces/emp001.jpeg",
-      "card_id": "your id"
+      "card_id": "W1114181043"
     },
     {
       "id": "EMP-002",
-      "name": "your name",
+      "name": "VUONG THANH HUNG",
       "department": "HR",
       "face_image": "data/faces/emp002.jpeg",
-      "card_id": "your id"
+      "card_id": "W1114181001"
+    },
+    {
+      "id": "EMP-003",
+      "name": "HO THAO TRINH",
+      "department": "HR",
+      "face_image": "data/faces/emp003.jpeg",
+      "card_id": "W1114181014"
+    },
+    {
+      "id": "EMP-004",
+      "name": "CHONG CONG LIN",
+      "department": "HR",
+      "face_image": "data/faces/emp004.jpeg",
+      "card_id": "W1114181047"
+    },
+    {
+      "id": "EMP-005",
+      "name": "CHENH PHUOC LONG",
+      "department": "HR",
+      "face_image": "data/faces/emp005.jpeg",
+      "card_id": "W1114181012"
     }
   ]
 }
