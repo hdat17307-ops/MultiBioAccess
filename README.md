@@ -161,46 +161,60 @@ python setup_db.py
 
 > ⚠️ Windows cần **Visual Studio Build Tools** để compile dlib.
 
-**Bước 1 — Cài Python 3.11**
+> 💡 Hướng dẫn này dùng **[Thonny](https://thonny.org)** — một IDE Python miễn phí, dễ cài, đã có sẵn Python bundled, phù hợp cho người chưa quen dùng terminal.
 
-Tải từ [python.org/downloads](https://www.python.org/downloads/) → chọn Python 3.11.x → **tích "Add Python to PATH"** khi cài.
+**Bước 1 — Cài Thonny**
 
-**Bước 2 — Cài CMake**
+Mở **PowerShell với quyền Administrator** và chạy:
 
-Tải từ [cmake.org/download](https://cmake.org/download/) → chọn bản `.msi` → **tích "Add CMake to system PATH"** khi cài.
+```powershell
+winget install -e --id AivarAnnamaa.Thonny
+```
 
-**Bước 3 — Cài Visual Studio Build Tools**
+Nếu không dùng winget, vào [thonny.org](https://thonny.org) tải file cài đặt cho Windows và chạy như cài app thông thường. Thonny đã bao gồm sẵn Python — **không cần cài Python riêng**.
 
-Tải từ [visualstudio.microsoft.com/visual-cpp-build-tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) → cài **"Desktop development with C++"**.
+**Bước 2 — Cài CMake, Visual Studio Build Tools, Tesseract OCR bằng winget**
 
-**Bước 4 — Cài Tesseract OCR**
+Vẫn trong **PowerShell với quyền Administrator**, chạy:
 
-Tải từ [github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki) → cài bản `tesseract-ocr-w64-setup-*.exe` → **tích "Add to PATH"**.
+```powershell
+winget install -e --id Kitware.CMake
+winget install -e --id Microsoft.VisualStudio.2022.BuildTools --override "--passive --wait --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
+winget install -e --id UB-Mannheim.TesseractOCR
+```
 
-**Bước 5 — Cài font CJK**
+> Sau khi cài xong, **khởi động lại Terminal/PowerShell** để PATH được cập nhật (đặc biệt cần cho `cmake`, `tesseract`).
 
-Tải [Noto Sans CJK](https://github.com/notofonts/noto-cjk/releases) → giải nén → click chuột phải vào file `.ttc` → **Install for all users**.
+> Nếu lệnh `winget` không được nhận dạng (Windows 10 cũ chưa có App Installer), cài qua Microsoft Store (tìm "App Installer") hoặc xem hướng dẫn tại https://aka.ms/getwinget, sau đó thử lại.
 
-**Bước 6 — Cài Python packages**
+**Bước 3 — Cài font CJK**
 
-Mở **Command Prompt** hoặc **PowerShell** với quyền Administrator:
+Hiện chưa có package winget cho Noto Sans CJK. Tải từ [Noto Sans CJK](https://github.com/notofonts/noto-cjk/releases) → giải nén → click chuột phải vào file `.ttc` → **Install for all users**.
+
+**Bước 4 — Cài thư viện Python qua Thonny**
+
+Mở **Thonny** → vào menu **Tools → Open System Shell...** — cửa sổ terminal mở ra sẽ tự dùng đúng `python`/`pip` của Thonny, không cần tạo môi trường ảo riêng.
+
+Trong cửa sổ đó, chạy:
 
 ```bat
 cd multi_biometric_access
-python -m venv .venv
-.venv\Scripts\activate
 
 pip install cmake dlib==19.24.6
 pip install -r requirements.txt
 ```
 
-> **Nếu dlib vẫn lỗi trên Windows:** Tải pre-built wheel từ [github.com/z-mahmud22/Dlib_Windows_Python3.x](https://github.com/z-mahmud22/Dlib_Windows_Python3.x) rồi `pip install dlib-*.whl`
+> **Nếu dlib vẫn lỗi:** Tải pre-built wheel từ [github.com/z-mahmud22/Dlib_Windows_Python3.x](https://github.com/z-mahmud22/Dlib_Windows_Python3.x) rồi `pip install dlib-*.whl`
 
-**Bước 7 — Khởi tạo dữ liệu**
+**Bước 5 — Khởi tạo dữ liệu**
+
+Trong **Thonny System Shell**, chạy:
 
 ```bat
 python setup_db.py
 ```
+
+Hoặc: trong Thonny, mở file `setup_db.py` (File → Open) rồi nhấn **F5 (Run)**.
 
 ---
 
@@ -217,6 +231,8 @@ cd multi_biometric_access
 # Chạy
 python main.py
 ```
+
+> 💡 **Windows (Thonny):** mở **Tools → Open System Shell...** trong Thonny rồi chạy `cd multi_biometric_access` và `python main.py` (không cần kích hoạt môi trường ảo). Hoặc mở `main.py` trong Thonny và nhấn **F5 (Run)**.
 
 Nhấn **Q** để thoát.
 
@@ -412,46 +428,60 @@ python setup_db.py
 
 > ⚠️ Windows 需要 **Visual Studio Build Tools** 才能編譯 dlib。
 
-**步驟一 — 安裝 Python 3.11**
+> 💡 本教學使用 **[Thonny](https://thonny.org)** —— 一款免費、易於安裝的 Python IDE，內建 Python 環境，適合不熟悉終端機操作的使用者。
 
-前往 [python.org/downloads](https://www.python.org/downloads/) 下載 Python 3.11.x → 安裝時**勾選「Add Python to PATH」**。
+**步驟一 — 安裝 Thonny**
 
-**步驟二 — 安裝 CMake**
+以系統管理員開啟 **PowerShell**，執行：
 
-前往 [cmake.org/download](https://cmake.org/download/) 下載 `.msi` 安裝檔 → 安裝時**勾選「Add CMake to system PATH」**。
+```powershell
+winget install -e --id AivarAnnamaa.Thonny
+```
 
-**步驟三 — 安裝 Visual Studio Build Tools**
+若無法使用 winget，請至 [thonny.org](https://thonny.org) 下載 Windows 安裝程式並依一般流程安裝。Thonny 已內建 Python，**不需另外安裝 Python**。
 
-前往 [visualstudio.microsoft.com/visual-cpp-build-tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) → 安裝 **「Desktop development with C++」** 工作負載。
+**步驟二 — 使用 winget 安裝 CMake、Visual Studio Build Tools、Tesseract OCR**
 
-**步驟四 — 安裝 Tesseract OCR**
+同樣在**系統管理員 PowerShell** 中執行：
 
-前往 [github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki) 下載 `tesseract-ocr-w64-setup-*.exe` → 安裝時**勾選「Add to PATH」**。
+```powershell
+winget install -e --id Kitware.CMake
+winget install -e --id Microsoft.VisualStudio.2022.BuildTools --override "--passive --wait --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
+winget install -e --id UB-Mannheim.TesseractOCR
+```
 
-**步驟五 — 安裝 CJK 字型**
+> 安裝完成後，請**重新啟動 Terminal/PowerShell** 以更新 PATH（`cmake`、`tesseract` 指令需要此步驟才能生效）。
 
-下載 [Noto Sans CJK](https://github.com/notofonts/noto-cjk/releases) → 解壓縮 → 對 `.ttc` 檔案按右鍵 → **「為所有使用者安裝」**。
+> 若系統提示找不到 `winget` 指令（較舊版 Windows 10 可能尚未內建 App Installer），請從 Microsoft Store 搜尋並安裝「App Installer」，或參考 https://aka.ms/getwinget 後再試一次。
 
-**步驟六 — 安裝 Python 套件**
+**步驟三 — 安裝 CJK 字型**
 
-以系統管理員開啟 **命令提示字元** 或 **PowerShell**：
+目前 winget 尚無 Noto Sans CJK 的套件。請下載 [Noto Sans CJK](https://github.com/notofonts/noto-cjk/releases) → 解壓縮 → 對 `.ttc` 檔案按右鍵 → **「為所有使用者安裝」**。
+
+**步驟四 — 透過 Thonny 安裝 Python 套件**
+
+開啟 **Thonny** → 點選選單 **Tools → Open System Shell...** —— 開啟的終端機會自動使用 Thonny 內建的 `python`/`pip`，不需另外建立虛擬環境。
+
+在該終端機中執行：
 
 ```bat
 cd multi_biometric_access
-python -m venv .venv
-.venv\Scripts\activate
 
 pip install cmake dlib==19.24.6
 pip install -r requirements.txt
 ```
 
-> **若 dlib 在 Windows 上仍然失敗：** 至 [github.com/z-mahmud22/Dlib_Windows_Python3.x](https://github.com/z-mahmud22/Dlib_Windows_Python3.x) 下載預編譯 wheel，再執行 `pip install dlib-*.whl`
+> **若 dlib 仍然安裝失敗：** 至 [github.com/z-mahmud22/Dlib_Windows_Python3.x](https://github.com/z-mahmud22/Dlib_Windows_Python3.x) 下載預編譯 wheel，再執行 `pip install dlib-*.whl`
 
-**步驟七 — 初始化人臉資料**
+**步驟五 — 初始化人臉資料**
+
+在 **Thonny System Shell** 中執行：
 
 ```bat
 python setup_db.py
 ```
+
+或：在 Thonny 中開啟 `setup_db.py`（File → Open）後按下 **F5（Run）**。
 
 ---
 
@@ -468,6 +498,8 @@ cd multi_biometric_access
 # 執行
 python main.py
 ```
+
+> 💡 **Windows（Thonny）：** 在 Thonny 中開啟 **Tools → Open System Shell...**，執行 `cd multi_biometric_access` 與 `python main.py`（不需啟用虛擬環境）。或開啟 `main.py` 後按下 **F5（Run）**。
 
 按 **Q** 鍵退出系統。
 
