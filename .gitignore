@@ -8,5 +8,6 @@
 /prompt.txt
 /run.bat
 /run.sh
+# Project data
 data/
-.gitignoreuploads/
+faces/
