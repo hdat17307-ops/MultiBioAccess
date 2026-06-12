@@ -407,5 +407,8 @@ class AccessControlSystem:
 
 
 if __name__ == "__main__":
+    from data_sync import sync_employee_data
+    sync_employee_data()
+
     system = AccessControlSystem()
     system.run()

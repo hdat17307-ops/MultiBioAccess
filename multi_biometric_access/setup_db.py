@@ -9,7 +9,7 @@ import os
 import json
 import pickle
 import face_recognition
-from config import EMPLOYEE_DB_PATH, FACE_ENCODINGS_PATH
+from config import _BASE, EMPLOYEE_DB_PATH, FACE_ENCODINGS_PATH
 
 def build_encodings() -> None:
     """
@@ -23,7 +23,7 @@ def build_encodings() -> None:
 
     results: list[dict] = []
     for emp in db["employees"]:
-        img_path = emp["face_image"]
+        img_path = os.path.join(_BASE, emp["face_image"])
         if not os.path.exists(img_path):
             print(f"SKIP (not found): {img_path}")
             continue

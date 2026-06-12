@@ -17,6 +17,8 @@ LIVENESS_TIMEOUT = 10               # Thời gian tối đa (giây) để hoàn 
 OCR_CONFIDENCE_THRESHOLD = 20       # Điểm tin cậy tối thiểu của Tesseract để chấp nhận một token / Tesseract 接受字元的最低信心分數
 
 EMPLOYEE_DB_PATH = os.path.join(_BASE, "data", "employees.json")    # Cơ sở dữ liệu nhân viên (JSON) / 員工資料庫（JSON 格式）
+EMPLOYEE_XLSX_PATH = os.path.join(_BASE, "data", "employees.xlsx")  # Bảng nhân viên dạng Excel để chỉnh sửa / 員工 Excel 表，供編輯使用
+FACES_DIR = os.path.join(_BASE, "data", "faces")  # Thư mục chứa ảnh khuôn mặt nhân viên / 員工臉部照片資料夾
 FACE_ENCODINGS_PATH = os.path.join(_BASE, "data", "face_encodings.pkl")  # Encodings khuôn mặt đã tiền xử lý (pickle) / 預先計算的臉部特徵向量（pickle 格式）
 
 FACE_MATCH_TOLERANCE = 0.43         # Ngưỡng khoảng cách Euclidean — nhỏ hơn = khớp; giá trị thấp hơn nghiêm ngặt hơn / 歐氏距離閾值，越低越嚴格；低於此值視為人臉相符

@@ -6,8 +6,10 @@ from pathlib import Path
 
 from openpyxl import Workbook, load_workbook
 
-JSON_PATH = Path("data/employees.json")
-XLSX_PATH = Path("data/employees.xlsx")
+from config import EMPLOYEE_DB_PATH, EMPLOYEE_XLSX_PATH
+
+JSON_PATH = Path(EMPLOYEE_DB_PATH)
+XLSX_PATH = Path(EMPLOYEE_XLSX_PATH)
 COLUMNS = ["id", "name", "department", "face_image", "card_id"]
 
 
