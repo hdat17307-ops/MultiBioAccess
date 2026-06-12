@@ -8,3 +8,5 @@
 /prompt.txt
 /run.bat
 /run.sh
+data/
+.gitignoreuploads/
