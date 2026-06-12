@@ -21,7 +21,7 @@ FACE_ENCODINGS_PATH = os.path.join(_BASE, "data", "face_encodings.pkl")  # Encod
 
 FACE_MATCH_TOLERANCE = 0.43         # Ngưỡng khoảng cách Euclidean — nhỏ hơn = khớp; giá trị thấp hơn nghiêm ngặt hơn / 歐氏距離閾值，越低越嚴格；低於此值視為人臉相符
 
-CARD_ZONE = (0.22, 0.12, 0.78, 0.58)  # Vùng đặt thẻ nhân viên — tỉ lệ (x1, y1, x2, y2) so với kích thước frame / 員工證放置區域，以畫面寬高比例表示 (x1, y1, x2, y2)
+CARD_ZONE = (0.22, 0.036, 0.78, 0.664)  # Vùng đặt thẻ nhân viên — tỉ lệ (x1, y1, x2, y2) so với kích thước frame, theo tỉ lệ thẻ ISO/CR80 85.6x53.98mm (~1.586:1) / 員工證放置區域，以畫面寬高比例表示 (x1, y1, x2, y2)，符合 ISO/CR80 卡片比例 85.6x53.98mm (~1.586:1)
 
 SUCCESS_COLOR = (0, 255, 0)         # Màu xanh lá — hiển thị khi xác thực thành công / 綠色，用於認證成功的視覺回饋
 FAIL_COLOR = (0, 0, 255)            # Màu đỏ — hiển thị khi từ chối truy cập / 紅色，用於拒絕存取的視覺回饋
